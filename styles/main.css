@@ -1,0 +1,1163 @@
+:root {
+  --text-color: #333;
+  --floral-white: #f5f1e8;
+  --roman-back: #333;
+  --checkbox-size: 20px;
+
+  /* added this because it was referenced in hero overlay but didn't exist... */
+  --overlay-background-color: rgba(0, 0, 0, 0.3);
+  --medium-font-size: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 1.2rem 0 1rem;
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+main {
+  max-width: 50rem;
+  align-self: center;
+  margin: 0 2rem;
+  padding: 0rem;
+}
+
+body.body main {
+  max-width: 70rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Cabin", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-menu {
+  position: relative;
+  order: -1;
+}
+
+.main-menu .menu-icon {
+  position: fixed;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 55px;
+  height: 30px;
+  background-color: #e6dedb;
+  border-radius: 10%;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-menu svg {
+  stroke: #333;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  padding: 8px;
+}
+
+.main-menu svg line {
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.main-menu svg line:first-child {
+  transform: translateY(8px);
+}
+
+.main-menu svg line:last-child {
+  transform: translateY(-8px);
+}
+
+.menu-show .menu-icon {
+  background-color: #ffffff;
+}
+
+.menu-show svg line {
+  stroke: #333;
+  stroke-width: 5px;
+}
+
+.menu-show svg line:first-child {
+  transform: scale(100px);
+}
+
+.menu-show svg line:last-child {
+  transform: scale(100px);
+}
+
+.main-menu nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #b49b94;
+  z-index: 1;
+
+  transition: transform 400ms ease;
+  transform: translateX(-500px);
+}
+
+.main-menu.menu-show nav {
+  transform: translateX(0);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+
+  padding: 0;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 9rem;
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: var(--floral-white);
+}
+
+nav a:not([href]) {
+  color: var(--roman-silver);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  color: #161616;
+}
+
+picture img {
+  width: 100%;
+}
+
+.button {
+  background-color: #d8c8c2;
+  font-family: "Playfair Display", sans-serif;
+  color: #000000;
+  border: 0.0625rem solid #6b534b;
+  padding: 0.1rem 1rem;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 426ms cubic-bezier(0.4, 0.9, 0.3, 1),
+    border-color 426ms cubic-bezier(0.4, 0.9, 0.3, 1),
+    background-color 426ms cubic-bezier(0.4, 0.9, 0.3, 1);
+}
+
+.button2 {
+  text-transform: uppercase;
+  display: inline-flex;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 300ms, color 500ms;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.button2:hover {
+  color: #fff;
+}
+
+/* Hero Image */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* added this to center vertically */
+  justify-content: center;
+  /* this margin top is causing a gap between the overlay and top of the image */
+  /* margin-top: 1rem; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-background-color);
+  padding: 0.25;
+}
+
+.hero h1 {
+  /* added dynamic font - min width is 2rem, max width it 6rem, anything in between is
+     7% of the viewport width */
+  font-size: clamp(2rem, 7vw, 6rem);
+  margin: 0;
+  text-shadow: 4px 4px 12px rgb(255, 255, 255);
+}
+
+.hero p {
+  /* increase the font size to make it more readable */
+  font-size: clamp(1rem, 4vw, 2rem);
+  /*  this line is referencing an undefined variable */
+  /* color: var(--background-color); */
+  /* I set the color to black for contrast */
+  color: rgb(255, 255, 255);
+  /* italic isn't very readable, especially with the text shadow */
+  /* font-style: italic; */
+  font-weight: bold;
+  /* reduced the text-shadow because it was blurry */
+  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+/* moved media query that was here to end of files. it was min-width: 501px */
+
+/* panel class for index */
+.panel {
+  display: flex;
+  flex-direction: column;
+  /* increase margin top for more whitespace */
+  margin-top: 6rem;
+}
+
+.panel .image-wrapper {
+  order: -1;
+  /* set aspect ratio of wrapper to aspect ratio of images */
+  aspect-ratio: 6 / 9;
+  /* flex: 0 1 35%;  don't need flex on column*/
+}
+
+/* .panel .text-wrapper { 
+  flex: 1 0 40%; don't need flex on column
+} */
+
+.panel img {
+  height: 100%;
+  /* don't need object-position or fit when aspect ratio of 
+     container matches aspect ratio of image */
+  /* object-position: cover; */
+  /* max-height: 300px; */
+  width: 100%;
+}
+
+/* Card styles */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 6rem;
+}
+
+.card {
+  position: relative;
+  margin-right: 0.5rem;
+}
+
+.cards .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: var(--overlay-background-color); */
+  /* i like the gradient better */
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); */
+
+  /* to have the names not disappear, transition the background */
+  transition: background 300ms;
+}
+
+.cards p {
+  color: var(--background-color);
+  font-size: var(--medium-font-size);
+  text-align: center;
+  /* increased margin top  */
+  margin: 0.75rem 0.25rem 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-weight: bolder;
+}
+
+.card:hover .overlay {
+  /* opacity: 0; */
+  background: transparent;
+}
+
+/* Form style  */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+#feedback-page {
+  text-align: center;
+}
+
+#form-main {
+  width: 100%;
+  float: left;
+  padding-top: 0px;
+}
+
+#form-div {
+  background-color: rgba(72, 72, 72, 0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 450px;
+  float: left;
+  left: 50%;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.feedback-input {
+  color: #3c3c3c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.feedback-input:focus {
+  background: #fff;
+  box-shadow: 0;
+  border: 3px solid #3498db;
+  color: #3498db;
+  outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused {
+  color: #30aed6;
+  border: #30aed6 solid 3px;
+}
+
+.container {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-wrapper {
+  width: 145px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  position: relative;
+  margin-left: 1%;
+}
+.radio-wrapper p {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  font-size: 1.7em;
+  margin: 0;
+  margin-top: 13px;
+}
+.radio-wrapper .correct {
+  left: 17px;
+  top: -5px;
+}
+.radio-wrapper .wrong {
+  right: 17px;
+  top: -5px;
+}
+.radio-wrapper .neutral-icon {
+  left: 69px;
+  top: -8px;
+  opacity: 0.2;
+}
+.radio-wrapper label {
+  z-index: 9;
+}
+
+/* input[type="radio"] {
+  display: none;
+} */
+
+i {
+  z-index: 99;
+  font-size: 18px;
+}
+
+.neutral-icon i {
+  font-size: 10px;
+}
+
+.neutral + label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 33%;
+  transition: transform 1s;
+}
+
+.neutral:checked + label {
+  border: 2px solid black;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eeeeee;
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+}
+
+.yes + label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  text-align: center;
+}
+
+.yes:checked + label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #13ee28;
+  background: linear-gradient(to bottom, #20d532 0%, #1cc301 100%);
+  -moz-animation-duration: 0.4s;
+  -moz-animation-name: slidein;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-name: slidein;
+  animation-duration: 0.4s;
+  animation-name: slidein;
+  -webkit-transform: translateZ(0);
+}
+
+.no + label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.no:checked + label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: red;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-name: slideno;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    transform: translate(50px, 0);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translate(50px, 0);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+@-webkit-keyframes slideno {
+  from {
+    transform: translate(-50px, 0);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes slideno {
+  from {
+    transform: translate(-50px, 0);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+@-webkit-keyframes returnLeft {
+  from {
+    transform: translate(-50px, 0);
+  }
+  to {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes returnLeft {
+  from {
+    transform: translate(-50px, 0);
+  }
+  to {
+    transform: translate(0px, 0);
+  }
+}
+@-webkit-keyframes returnRight {
+  from {
+    transform: translate(50px, 0);
+  }
+  to {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes returnRight {
+  from {
+    transform: translate(50px, 0);
+  }
+  to {
+    transform: translate(0px, 0);
+  }
+}
+
+/* form */
+
+.one {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-left: 4rem;
+  margin-top: 5rem;
+}
+
+.one .two {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.one .two a .fa {
+  font-size: 40px;
+  color: #262626;
+  line-height: 80px;
+  transition: 0.5s;
+  padding-right: 14px;
+}
+
+.one .two a span {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  color: #262626;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+
+.one .two a {
+  text-decoration: none;
+  display: absolute;
+  display: block;
+  width: 210px;
+  height: 80px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+  transition: 0.5s;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+.one .two a:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+.one .two a:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+.one .two a:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.one .two:hover .fa {
+  color: #fff;
+}
+
+/* ul li:hover span {
+  color: #fff;
+} */
+
+.one .two:hover:nth-child(1) a {
+  background: #3b5998;
+}
+.one .two:hover:nth-child(1) a:before {
+  background: #365492;
+}
+.one .two:hover:nth-child(1) a:after {
+  background: #4a69ad;
+}
+
+.one .two:hover:nth-child(2) a {
+  background: #00aced;
+}
+.one .two:hover:nth-child(2) a:before {
+  background: #097aa5;
+}
+.one .two:hover:nth-child(2) a:after {
+  background: #53b9e0;
+}
+
+.one .two:hover:nth-child(3) a {
+  background: #dd4b39;
+}
+.one .two:hover:nth-child(3) a:before {
+  background: #b33a2b;
+}
+.one .two:hover:nth-child(3) a:after {
+  background: #e66a5a;
+}
+
+.one .two:hover:nth-child(4) a {
+  background: #e4405f;
+}
+.one .two:hover:nth-child(4) a:before {
+  background: #d81c3f;
+}
+.one .two:hover:nth-child(4) a:after {
+  background: #e46880;
+}
+
+.one {
+  position: relative;
+  top: 8rem;
+}
+
+form {
+  padding: 2rem;
+  background-color: #dbd8c8;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form-panel .image-wrap {
+  order: 0;
+  flex: 0%;
+  justify-content: center;
+}
+
+.form-panel {
+  align-items: center;
+}
+
+.form-panel .text-wrap {
+  flex: 70%;
+}
+
+input {
+  color: black;
+  border: none;
+}
+
+textarea {
+  border: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  position: relative;
+  /* width: var(--checkbox-size); */
+  height: var(--checkbox-size);
+  border-radius: 6px;
+
+  transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  border-color: var(--wild-sand);
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="checkbox"]:checked:focus {
+  /* border: 2px solid #333; */
+  box-shadow: 0 0 3px #333;
+  outline: black;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(255, 255, 255);
+}
+
+input[type="checkbox"]:checked::after,
+input[type="radio"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+input[type="checkbox"]:checked::after {
+  top: 1px;
+  right: 7px;
+  width: calc(var(--checkbox-size) / 4);
+  height: calc(var(--checkbox-size) / 2);
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  transform: rotate(38deg);
+}
+
+input[type="radio"]::after {
+  top: 2px;
+  left: 2px;
+  width: calc(var(--checkbox-size) - 4px);
+  height: calc(var(--checkbox-size) - 4px);
+  border-radius: 50%;
+
+  transform: scale(0);
+  transition: transform 300ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+fieldset {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  max-width: 8rem;
+  align-self: center;
+}
+
+/* end form */
+
+/* Icons ---------------------------------- */
+#name {
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#name:focus {
+  background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+  background-size: 30px 30px;
+  background-position: 8px 5px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#email {
+  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#email:focus {
+  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#comment {
+  background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  background-color: white;
+}
+
+#button-blue {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  float: left;
+  width: 100%;
+  border: #fbfbfb solid 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+
+#button-blue:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0493bd;
+}
+
+.submit:hover {
+  color: #3498db;
+}
+
+.ease {
+  width: 0px;
+  height: 74px;
+  background-color: #fbfbfb;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.submit:hover .ease {
+  width: 100%;
+  background-color: white;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/* this was in the middle of your CSS above. Moved it here. it was messing with overrides */
+@media (min-width: 501px) {
+  main {
+    margin: 0 1.5rem;
+  }
+
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); */
+  .main-menu {
+    order: 0;
+  }
+
+  .main-menu .menu-icon {
+    display: none;
+  }
+
+  .main-menu nav {
+    background-color: #e6dedb;
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80rem;
+    gap: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  nav a:not([href]) {
+    color: var(--roman-black);
+  }
+
+  nav a::after {
+    content: "";
+    display: block;
+    width: calc(100% + 12px);
+    height: 3px;
+    margin-left: -6px;
+    margin-top: 6px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: transform 200ms ease-in, color 300ms ease-in;
+    transform-origin: right;
+  }
+
+  nav a[href]:hover {
+    color: #fff;
+  }
+
+  nav a[href]:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+  }
+  .cards .overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  }
+  .one {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 700px) {
+  .panel {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  /* I increased the font size see not below on p. You can adjust to sizes you'd 
+  prefer.  */
+  .panel h2 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  /* because I wanted to focus on the images, I increased the font size to 
+  reduce whitespace in the .text-wrapper */
+  .panel p {
+    font-size: 1.5rem;
+  }
+
+  .panel .left {
+    order: -2;
+  }
+
+  /* on tablet, I set the flex-items to be equal widths - you can change it */
+  .panel .text-wrapper {
+    flex: 0 1 50%;
+  }
+
+  /* set an aspect ratio on the image-wrapper so it has the 
+  same aspect ratio of the images */
+  .panel .image-wrapper {
+    flex: 1 0 50%;
+    aspect-ratio: 6 / 9;
+  }
+
+  /* have the image fill the image-wrapper. you don't need object-fit 
+  because the .image-wrapper has the same aspect ratio as the image */
+  .panel img {
+    width: 100%;
+    height: 100%;
+
+    /* override a max-height set earlier */
+    max-height: none;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards .card {
+    flex: 1 1 35%;
+  }
+
+  .one {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
+  /**************************************************************
+  this will make your hero image full screen on laptop. You can 
+  adjust the vh if you don't want it full screen
+  **************************************************************/
+  .hero {
+    /* this subtracts the height of the menu (1rem padding top and bottom and
+    1rem font size from the vertical height of the
+    viewport. it's not 100% exact because it doesn't include line spacing, but 
+    it is good enough. Another option would be make the header on this 
+    page position: absolute, with top,left, and right set to 0 and a z-index of
+    1 -- but it will cover some of the top of the image */
+    height: calc(100vh - 3rem);
+    height: calc(80vh - 3rem);
+  }
+
+  /* size the image to 100% of .hero container and crop with object fit */
+  .hero img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* I thought the main needed a bit more with on laptop, so I gave the 
+  body on your main index.html a class .main-page */
+
+  .main-page main {
+    max-width: 60rem;
+  }
+}
+
+footer {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* loader */
+.loader {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  margin-left: 10%;
+  transform: translate3d(-50%, -50%, 0);
+  animation: loader 3000ms infinite ease-in-out;
+}
+.dot {
+  width: 24px;
+  height: 24px;
+  background: rgb(22, 48, 117);
+  border-radius: 100%;
+  display: inline-block;
+  animation: slide 1s infinite;
+}
+.dot:nth-child(1) {
+  animation-delay: 0.1s;
+  background: #32aacc;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background: #64aacc;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+  background: #96aacc;
+}
+.dot:nth-child(4) {
+  animation-delay: 0.4s;
+  background: #c8aacc;
+}
+.dot:nth-child(5) {
+  animation-delay: 0.5s;
+  background: #faaacc;
+}
+@-moz-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

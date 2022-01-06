@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>Form</title>
+    <meta name="description" content="hello">
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".menu-icon").addEventListener("click", () => {
+                document.querySelector(".main-menu").classList.toggle("menu-show");
+            });
+        });
+    </script>
+</head>
+
+<body class="body">
+    <header class="main-menu">
+        <div class="menu-icon">
+            <svg viewbox="0 0 60 60">
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+                <line x1="15px" y1="30px" x2="45px" y2="30px" />
+                <line x1="15px" y1="30px" x2="45px" y2="30px" />
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+            </svg>
+        </div>
+        <nav>
+            <h2 class="hidden">Main Menu</h2>
+            <ul>
+                <li class="grow"><a href="../">MoCo</a></li>
+                <li class="grow"><a href="../">Home</a></li>
+                <li><a class="dead-link">About</a></li>
+                <li class="grow"><a href="../form/">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact Me</h1>
+        <p> Hi my name is Morgan and this is all of the information that you will need to know in order to contact me
+            personally. <a href="https://www.instagram.com/morgwyman/">My Instagram</a> </p>
+        <p> Please feel free to reach out with any questions that you have for me. I am more than willing to respond
+            quickly and help out to the best of my ability. </p>
+
+
+        <div>
+            <h3> Upcoming deals</h3>
+            <div class="container">
+                <div class="radio-wrapper">
+                    <p class="correct"><i class="ion-checkmark-round"></i>
+                    </p>
+                    <p class="neutral-icon"><i class="ion-record"></i>
+                    </p>
+                    <p class="wrong"><i class="ion-close-round"></i></p>
+                    <input type="radio" name="event" class="yes" id="radio-yes" />
+
+                    <label for="radio-yes"></label>
+
+                    <input type="radio" name="event" class="neutral" checked id="radio-neutral" />
+                    <label for="radio-neutral"></label>
+
+
+                    <input type="radio" name="event" class="no" id="radio-no" />
+                    <label for="radio-no"></label>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<footer>
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</footer>
+
+</html>
