@@ -5,17 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/main.css">
+    <title>About</title>
+    <meta name="description" content="information about dharks">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@700&display=swap"
         rel="stylesheet">
-    <title>Form</title>
-    <meta name="description" content="hello">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <script>
         window.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".menu-icon").addEventListener("click", () => {
@@ -25,7 +32,7 @@
     </script>
 </head>
 
-<body class="body">
+<body>
     <header class="main-menu">
         <div class="menu-icon">
             <svg viewbox="0 0 60 60">
@@ -39,54 +46,105 @@
         <nav>
             <h2 class="hidden">Main Menu</h2>
             <ul>
-                <li class="grow"><a href="../">MoCo</a></li>
                 <li class="grow"><a href="../">Home</a></li>
                 <li><a class="dead-link">About</a></li>
-                <li class="grow"><a href="../form/">Form</a></li>
+                <li class="grow"><a href="../contact/">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Contact Me</h1>
-        <p> Hi my name is Morgan and this is all of the information that you will need to know in order to contact me
-            personally. <a href="https://www.instagram.com/morgwyman/">My Instagram</a> </p>
-        <p> Please feel free to reach out with any questions that you have for me. I am more than willing to respond
-            quickly and help out to the best of my ability. </p>
-
-
-        <div>
-            <h3> Upcoming deals</h3>
-            <div class="container">
-                <div class="radio-wrapper">
-                    <p class="correct"><i class="ion-checkmark-round"></i>
-                    </p>
-                    <p class="neutral-icon"><i class="ion-record"></i>
-                    </p>
-                    <p class="wrong"><i class="ion-close-round"></i></p>
-                    <input type="radio" name="event" class="yes" id="radio-yes" />
-
-                    <label for="radio-yes"></label>
-
-                    <input type="radio" name="event" class="neutral" checked id="radio-neutral" />
-                    <label for="radio-neutral"></label>
-
-
-                    <input type="radio" name="event" class="no" id="radio-no" />
-                    <label for="radio-no"></label>
+        <article class="panel">
+            <div class="text-wrap">
+                <h1>About Me</h1>
+                <p class="text-wrap">
+                    Hi! My name is JJ Stephens. Currently, I am an undergraduate student at Brigham Young University. As
+                    a
+                    student, I am thrilled to have the opportunity to interact with other students and learn from great
+                    professors. Outside of school I like board games, playing sports, coding, and learning new things.
+                </p>
+                <p>
+                    As a student, I am exposed to many different aspects of computer science. Right now, my interests
+                    include both
+                    software devolopment and data science, which have influenced me to learn python and swift. One day I
+                    hope to become an expert in one of these fields.
+                </p>
+            </div>
+            <div class="image-wrap">
+                <img class="block-picture" src="../images/standing600.jpg" alt="depiction of a dhark">
+            </div>
+        </article>
+        <article>
+            <div class="grid-wrap">
+                <div class="project-card">
+                    <h2>Things I've Done</h2>
+                </div>
+                <div class="project-card">
+                    <div class="panel">
+                        <div class="vertical-center">
+                            <img src="../images/logo1024.png" alt="Gas Share logo" class="gas-share">
+                            <a class="download-app-store"
+                                href="https://apps.apple.com/us/app/gas-share/id1576929723?itsct=apps_box_link&itscg=30200"
+                                target="_blank">
+                                <img src="../images/Download-App-Store.svg" alt="Download in the App Store">
+                            </a>
+                        </div>
+                        <div class="text-wrap">
+                            <h3>iOS App</h3>
+                            <p>In July 2021, I finished my first app and launched it in the App Store. From this project
+                                I learned Swift/SwiftUI, how to use Xcode, and how to make an app from start to finish.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Window Washing</h3>
+                    <img src="../images/window_washing600.png" alt="Washing Windows">
+                    <p>I started a window washing business with my younger brothers in while in high school. We had to
+                        work
+                        together to contact the clients, manage the finances, and wash the windows. This taught me how
+                        to be
+                        self-motivated and how to work hard. By the time I left home, we had over 50 clients whose
+                        windows we would
+                        wash at least once a year.</p>
+                </div>
+                <div class="project-card">
+                    <div class="panel">
+                        <div class="vertical-center">
+                            <img src="../images/devclub.png" alt="Dev club logo" class="gas-share">
+                        </div>
+                        <div class="text-wrap">
+                            <h3>BYU Dev Club</h3>
+                            <p>I am a club officer in the BYU Dev Club. Our current club project is making a "free food"
+                                app for BYU
+                                students.
+                            </p>
+                            <div class="vertical-center">
+                                <div class="button-wrap">
+                                    <div class="button-container">
+                                        <a class="button" href="https://dev.byu.edu/" target="_blank">
+                                            Website
+                                        </a>
+                                    </div>
+                                    <div class="button-container">
+                                        <a class="button" href="https://github.com/byudevelopers/BYUFreeFood"
+                                            target="_blank">
+                                            Project
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </article>
     </main>
+    <footer>
+        <p>
+            JJ Stephens — 2021
+        </p>
+    </footer>
 </body>
-
-<footer>
-    <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
-</footer>
 
 </html>
